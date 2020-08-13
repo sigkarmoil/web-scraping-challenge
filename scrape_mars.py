@@ -14,18 +14,19 @@ def init_browser():
 ## Get Latest Title and Teaser ##
 
 def scrape():
+## Get Latest Title and Teaser ##
     browser = init_browser()
     url = "https://mars.nasa.gov/news/?page=0&per_page=40&order=publish_date+desc%2Ccreated_at+desc&search=&category=19%2C165%2C184%2C204&blank_scope=Latest"
     browser.visit(url)
 
         #if you need to give space
-        #time.sleep(1)
+    time.sleep(1)
 
         # Scrape page into Soup
     html = browser.html
     soup = bs(html, "lxml")
 
-        # Get the news title
+    # Get the news title #
     stripped_title=[]
     titles = soup.find_all('div', class_='content_title')
     for title in titles:
@@ -41,7 +42,7 @@ def scrape():
     browser.visit(url)
 
             #if you need to give space
-            #time.sleep(1)
+    time.sleep(1)
 
         # Click featured image button
     try:
@@ -66,6 +67,7 @@ def scrape():
 
     url = "https://twitter.com/marswxreport?lang=en"
     browser.visit(url)
+    time.sleep(1)
             # Scrape page into Soup
     html = browser.html
     soup = bs(html, "lxml")
@@ -76,6 +78,7 @@ def scrape():
 
     url = "https://space-facts.com/mars/"
     browser.visit(url)
+    time.sleep(1)
 
     import pandas as pd
             # Parse the image

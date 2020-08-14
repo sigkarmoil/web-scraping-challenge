@@ -87,7 +87,9 @@ def scrape():
     soup = bs(html, "lxml")
     table = pd.read_html(url)
     table_df=table[0]
-    html_table = table_df.to_html()
+    table_df = table_df.rename(columns = {0:"",1:"Value"})
+    html_table = table_df.to_html(bold_rows = True, index = False)
+    
 
 ## Store data in dictionary ##
     scrape_data = {

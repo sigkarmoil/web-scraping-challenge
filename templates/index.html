@@ -26,17 +26,38 @@
       </div>
       <div class = "col-md-6">
         <h2>{{ mars_data.latest_title }}</h2>
-        <h3>Latest temp: {{ mars_data.latest_teaser}}</h3>
+        <p>{{ mars_data.latest_teaser}}</p>
+        {{ mars_data.html_table  | safe}}
       </div>
     </div>
   </div>
   <div class="container">
+    <div class="row">
+      <h2>The hemisphere of Mars</h2>
+    </div>
+    <div class="row">
+      <div class = "col-md-6">
+        <img src="{{ mars_data.hemi_img0 }}" alt="See one of the hemisphere!" width = 200px text-align="center">
+      </div>
+      <div class = "col-md-6">
+        <img src="{{ mars_data.hemi_img1 }}" alt="See one of the hemisphere!" width = 200px text-align="center">
+      </div>
+    </div>
+    <div class="row">
+      <div class = "col-md-6">
+        <img src="{{ mars_data.hemi_img2 }}" alt="See one of the hemisphere!" width = 200px text-align="center">
+      </div>
+      <div class = "col-md-6">
+        <img src="{{ mars_data.hemi_img3 }}" alt="See one of the hemisphere!" width = 200px text-align="center">
+      </div>
+    </div>
+  </div>
     
 
 
   </div>
   <div class="table-responsive container">
-    {{ mars_data.html_table  | safe}}
+
   </div>
 </body>
 
